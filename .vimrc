@@ -31,3 +31,6 @@ function! Svn_diff()
 endfunction
 "special cases regarding tabs
 autocmd BufEnter */debian/rules set noet ts=8 sw=8
+
+"whitspaces and tabs in red.
+autocmd VimEnter * :call matchadd('Error', '\s\+$', -1) | call matchadd('Error', '\%u00A0')
