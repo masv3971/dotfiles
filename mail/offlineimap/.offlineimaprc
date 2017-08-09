@@ -1,0 +1,26 @@
+[general]
+accounts = Ebox
+ui = blinkenlights
+
+[Account Ebox]
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = /mnt/extra-disk/Maildir
+
+[Repository Remote]
+type = IMAP
+ssl = yes
+sslcacertfile = ~/DigiCert/DigiCertCA-2024-11-18-ExtendedValidation.crt
+remotehost = mail.su.se
+remoteuser = masv3971
+remotepass = %%PASSWORD%%
+auth_mechanisms = PLAIN
+
+# Not sure if 'subscribedonly' should be set to 'no'.. But hey, it works!
+subscribedonly = no
+maxconnections = 5
+
+folderfilter = lambda folder: folder not in ['Calendar', 'Contacts', 'Items/IT Beredskapskalender', 'Items/janj', 'Journal', 'Notes', 'Tasks', 'Deleted Items.IT Beredskapskalender', 'Deleted Items.janj', 'Calendar.it ford', 'bra-att-ha', 'Deleted Items']

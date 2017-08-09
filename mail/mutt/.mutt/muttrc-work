@@ -1,0 +1,94 @@
+set realname = "Magnus Svensson"
+set from="masv3971@su.se"
+set reverse_name
+alternates "(masv3971|magnus\.svensson)@(it.)?su.se"
+set pgp_sign_as="A8E4181E7345BF1420EB4C9809383E9836163042"
+set postpone_encrypt_as=$pgp_sign_as
+
+set editor=vim
+
+set smtp_authenticators="gssapi:login"
+
+set folder="/mnt/extra-disk/Maildir"
+mailboxes /mnt/extra-disk/Maildir/INBOX
+mailboxes /mnt/extra-disk/Maildir/Confluence
+mailboxes /mnt/extra-disk/Maildir/marval
+mailboxes /mnt/extra-disk/Maildir/Klart
+mailboxes /mnt/extra-disk/Maildir/Confluence
+mailboxes /mnt/extra-disk/Maildir/commits
+mailboxes "/mnt/extra-disk/Maildir/Junk E-Mail"
+mailboxes "/mnt/extra-disk/Maildir/Sent Messages"
+mailboxes "/mnt/extra-disk/Maildir/Deleted Messages"
+
+# ROOT
+mailboxes "/mnt/extra-disk/Maildir/ROOT"
+mailboxes "/mnt/extra-disk/Maildir/ROOT.DHCP"
+
+
+# Projekt
+
+## BOX
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Box"
+
+## Converis
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Converis"
+
+## Delad-disk
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Delad-lagring"
+
+## Graphing
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Graphing"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Graphing.chefs-tv"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Graphing.Grafana"
+
+## Raindance
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Primula"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Raindance"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Raindance.AutoOp"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Raindance.Diska Warning"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Raindance.Filearea"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Raindance.Mamut"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Raindance.Nagios Alert"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Raindance.UdpAdm"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Raindance.TransDB"
+
+## Misc.
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Script.Dead Interfaces"
+
+## F5
+mailboxes "/mnt/extra-disk/Maildir/Projekt.F5 - BIGIP"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.F5 - BIGIP.Charlie - Kluster"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.F5 - BIGIP.Lab"
+
+
+## TOR
+mailboxes "/mnt/extra-disk/Maildir/Projekt.TOR exit node"
+mailboxes "/mnt/extra-disk/Maildir/Projekt.TOR exit node.SU"
+
+## IPV6
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Ipv6"
+
+## Ubuntu
+mailboxes "/mnt/extra-disk/Maildir/Projekt.Ubuntu"
+
+## Network
+mailboxes "/mnt/extra-disk/Maildir/Network"
+mailboxes "/mnt/extra-disk/Maildir/Network.Intar"
+mailboxes "/mnt/extra-disk/Maildir/Network.switches router config diffs"
+mailboxes "/mnt/extra-disk/Maildir/Network.dnsadmin\@it\.su\.se"
+
+# FIXME
+set smtp_url = "smtps://masv3971@smtp.su.se:465/"
+set spoolfile = "+INBOX"
+macro index + '<change-folder>+INBOX<enter>'
+set record="+Sent Items"
+set postponed="+Drafts"
+
+folder-hook ".*" "ignore X-Antispam-Training-Nonspam X-Antispam-Training-Spam"
+folder-hook "Junk" "ignore X-Antispam-Training-Spam; unignore X-Antispam-Training-Nonspam"
+folder-hook "INBOX" "ignore X-Antispam-Training-Nonspam; unignore X-Antispam-Training-Spam"
+
+# Get mail manually
+macro index "\CN" "<enter-command>unset wait_key<enter><shell-escape>offlineimap<enter><enter-command>set wait_key<enter>" "Get mail manually"
+
+set imap_pass = "ApansattIgranen02"

@@ -1,0 +1,185 @@
+set pager_index_lines=6
+set pager_stop=yes
+
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+
+set move=no
+set mark_old=no
+
+set sort = threads
+set sort_aux = 'last-date-received'
+
+set sleep_time = 0
+
+set date_format = '!%a, %F at %T %Z'
+set markers=no
+
+set sidebar_visible=yes
+set sidebar_width=35
+
+bind index CP sidebar-prev
+bind index CN sidebar-next
+bind index CO sidebar-open
+bind pager CP sidebar-prev
+bind pager CN sidebar-next
+bind pager CO sidebar-open
+
+#bind index CP sidebar-prev
+#bind index CN sidebar-next
+#bind index CO sidebar-open
+
+#bind pager,index \CP sidebar-prev
+#bind pager,index \CN sidebar-next
+#bind pager,index \CO sidebar-open
+
+# Forward attachments
+set mime_forward=ask-no
+set mime_forward_rest=yes
+
+set rfc2047_parameters=yes
+alternative_order = text/plain
+auto_view text/html
+
+set include=yes
+set forward_format="Fwd: %s"
+set reply_regexp="^((re([\[0-9\]+])*|aw|sv):[ \t]*)*"
+
+set implicit_autoview=yes
+
+set recall=ask-no
+
+#set ts_enabled=yes
+#set ts_status_format="%f: %?n?%n new of ?%?m?%m messages&no messages?%?b? | %b boxes with new?"
+
+color index brightgreen default ~N # New
+color index brightred default ~D # Deleted
+color index brightmagenta default ~T # Tagged
+color index brightyellow default ~F # Flagged
+color header brightgreen default "^Subject:"
+color header yellow default "^Date:"
+color header brightyellow default "^To:"
+color header yellow default "^Cc::"
+color header yellow default "^Bcc::"
+color header brightyellow default "^From:"
+color header red default "^X-.*:"
+
+bind index G 'last-entry'
+bind index,pager previous-line
+
+# Search the opposite directions
+bind index \eN search-opposite
+
+# Go to INBOX
+unset wait_key
+macro index + "<change-folder>+<enter>"
+
+# Goto next mailbox which have a new (not unread) mail
+macro index,pager \Ci "<next-unread-mailbox>"
+
+# Goto next mail which is new or unread
+macro index,pager J "<next-new-then-unread>"
+
+# Mark thread as read
+macro index,pager R "<read-thread>"
+
+# quit
+macro index Q "<quit>"
+macro index q "<end-cond>"
+
+# Mark every mail in current inbox read
+macro index \Cr "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>all<enter>" "mark all as read"
+
+macro index,pager A "<enter-command>source ~/.mutt/aliases-generated<enter><enter-command>source $alias_file<enter>"
+
+ignore *
+unignore Date From To CC Bcc Subject
+hdr_order Date From To Cc
+
+set mail_check=60
+set mail_check_recent=no
+set imap_check_subscribed
+set timeout = 15
+
+set imap_keepalive=60
+
+# GPG
+# Handle PGP-inline
+message-hook '!~g !~G ~b "^-----BEGIN PGP (SIGNED )?MESSAGE"' 'exec check-traditional-pgp'
+
+set postpone_encrypt=yes
+set pgp_use_gpg_agent=yes
+set pgp_decode_command="gpg2 --status-fd=2 --no-verbose --batch --output - %f"
+set pgp_verify_command="gpg2 --status-fd=2 --no-verbose --batch --output - --verify %s %f"
+set pgp_decrypt_command="gpg2 --status-fd=2 --no-verbose --batch --output - %f"
+set pgp_sign_command="gpg2 --no-verbose --batch --output - --armor --detach-sign --textmode %?a?-u %a? %f"
+set pgp_clearsign_command="gpg2 --no-verbose --batch --output - --armor --textmode --clearsign %?a?-u %a? %f"
+set pgp_encrypt_only_command="gpg2 --batch --quiet --no-verbose --textmode --output - --encrypt --armor %?a?--hidden-encrypt-to %a? --always-trust -r %r -- %f"
+set pgp_encrypt_sign_command="gpg2 --batch --quiet --no-verbose --textmode --output - --encrypt --armor %?a?--hidden-encrypt-to %a? --always-trust -r %r --sign %?a?-u %a? -- %f"
+set pgp_import_command="gpg2 --no-verbose --import -v %f"
+set pgp_export_command="gpg2 --no-verbose --export --armor %r"
+set pgp_verify_key_command="gpg2 --no-verbose --batch --fingerprint --check-sigs %r"
+set pgp_list_pubring_command="gpg2 --no-verbose --batch --with-colons --with-fingerprint --list-keys %r"
+set pgp_list_secring_command="gpg2 --no-verbose --batch --with-colons --with-fingerprint --list-secret-keys %r"
+#set pgp_autosign=yes
+set pgp_auto_decode=yes
+set pgp_replyencrypt=yes
+set pgp_replysign=yes
+set pgp_timeout=0
+# This version uses --status-fd messages
+set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
+set pgp_decryption_okay="^\\[GNUPG:\\] DECRYPTION_OKAY"
+
+# SMIME
+# Path to a file or directory with trusted certificates
+# Generate with: security export -t certs -o ~/.mutt/smime/ca-bundle.crt
+set smime_ca_location="~/.mutt/smime/ca-bundle.crt"
+
+# Path to where all known certificates go. (must exist!)
+set smime_certificates="~/.mutt/smime/certificates"
+
+# Path to where all private keys go. (must exist!)
+set smime_keys="~/.mutt/smime/keys"
+
+# Uncoment this if you don't want to set labels for certificates you add.
+# unset smime_ask_cert_label
+
+# These are used to extract a certificate from a message.
+# First generate a PKCS#7 structure from the message.
+set smime_pk7out_command="openssl smime -verify -in %f -noverify -pk7out"
+
+# Extract the included certificate(s) from a PKCS#7 structure.
+set smime_get_cert_command="openssl pkcs7 -print_certs -in %f"
+
+# Extract the signer's certificate only from a S/MIME signature (sender verification)
+set smime_get_signer_cert_command="openssl smime -verify -in %f -noverify -signer %c -out /dev/null"
+
+# This is used to get the email address the certificate was issued to.
+set smime_get_cert_email_command="openssl x509 -in  %f -noout -email"
+
+# Add a certificate to the database using smime_keys.
+set smime_import_cert_command="smime_keys add_cert %f"
+
+#Section C: Incoming messages
+
+# Decrypt a message. Output is a MIME entity.
+set smime_decrypt_command="openssl smime -decrypt  -passin stdin -inform DER -in %f -inkey %k -recip %c"
+
+# Verify a signature of type multipart/signed
+set smime_verify_command="openssl smime -verify -inform DER -in %s %C -content %f"
+
+# Verify a signature of type application/x-pkcs7-mime
+set smime_verify_opaque_command="\
+openssl smime -verify -inform DER -in %s %C || \
+openssl smime -verify -inform DER -in %s -noverify 2>/dev/null"
+
+
+set alias_file="~/.mutt/aliases"
+
+# FIXME den här filen genereras av mutt-aliases.pl
+source ~/.mutt/aliases
+source $alias_file
+
+source ~/.mutt/muttrc-work
+
