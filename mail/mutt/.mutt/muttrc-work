@@ -1,8 +1,8 @@
-set realname = "Magnus Svensson"
-set from="masv3971@su.se"
+set realname = "%%GIVEN_NAME%% %%SURE_NAME%%"
+set from="%%UID%%@su.se"
 set reverse_name
-alternates "(masv3971|magnus\.svensson)@(it.)?su.se"
-set pgp_sign_as="A8E4181E7345BF1420EB4C9809383E9836163042"
+alternates "(%%UID%%|%%GIVEN_NAME%%\.%%SURE_NAME%%)@(it.)?su.se"
+set pgp_sign_as="%%FINGER_PRINT%%"
 set postpone_encrypt_as=$pgp_sign_as
 
 set editor=vim
@@ -60,11 +60,6 @@ mailboxes "/mnt/extra-disk/Maildir/Projekt.F5 - BIGIP"
 mailboxes "/mnt/extra-disk/Maildir/Projekt.F5 - BIGIP.Charlie - Kluster"
 mailboxes "/mnt/extra-disk/Maildir/Projekt.F5 - BIGIP.Lab"
 
-
-## TOR
-mailboxes "/mnt/extra-disk/Maildir/Projekt.TOR exit node"
-mailboxes "/mnt/extra-disk/Maildir/Projekt.TOR exit node.SU"
-
 ## IPV6
 mailboxes "/mnt/extra-disk/Maildir/Projekt.Ipv6"
 
@@ -78,7 +73,7 @@ mailboxes "/mnt/extra-disk/Maildir/Network.switches router config diffs"
 mailboxes "/mnt/extra-disk/Maildir/Network.dnsadmin\@it\.su\.se"
 
 # FIXME
-set smtp_url = "smtps://masv3971@smtp.su.se:465/"
+set smtp_url = "smtps://%%MAIL_ADRESS%%@smtp.su.se:465/"
 set spoolfile = "+INBOX"
 macro index + '<change-folder>+INBOX<enter>'
 set record="+Sent Items"
@@ -91,4 +86,4 @@ folder-hook "INBOX" "ignore X-Antispam-Training-Nonspam; unignore X-Antispam-Tra
 # Get mail manually
 macro index "\CN" "<enter-command>unset wait_key<enter><shell-escape>offlineimap<enter><enter-command>set wait_key<enter>" "Get mail manually"
 
-set imap_pass = "ApansattIgranen02"
+set imap_pass = "%%PASSWORD%%"
