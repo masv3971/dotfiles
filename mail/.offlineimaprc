@@ -8,7 +8,7 @@ remoterepository = Remote
 
 [Repository Local]
 type = Maildir
-localfolders = /mnt/extra-disk/Maildir
+localfolders = /mnt/mail/Maildir
 
 [Repository Remote]
 type = IMAP
