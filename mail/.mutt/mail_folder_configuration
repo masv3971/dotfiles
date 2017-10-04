@@ -1,0 +1,62 @@
+set folder="/mnt/mail/Maildir"
+mailboxes /mnt/mail/Maildir/INBOX
+mailboxes /mnt/mail/Maildir/Confluence
+mailboxes /mnt/mail/Maildir/marval
+mailboxes /mnt/mail/Maildir/Klart
+mailboxes /mnt/mail/Maildir/Confluence
+mailboxes /mnt/mail/Maildir/commits
+mailboxes "/mnt/mail/Maildir/Junk E-Mail"
+mailboxes "/mnt/mail/Maildir/Sent Messages"
+mailboxes "/mnt/mail/Maildir/Deleted Messages"
+
+# ROOT
+mailboxes "/mnt/mail/Maildir/ROOT"
+mailboxes "/mnt/mail/Maildir/ROOT.DHCP"
+
+
+# Projekt
+mailboxes "/mnt/mail/Maildir/Projekt.Script.Dead Interfaces"
+
+## IPV6
+mailboxes "/mnt/mail/Maildir/Projekt.Ipv6"
+
+## Ubuntu
+mailboxes "/mnt/mail/Maildir/Projekt.Ubuntu"
+
+# Da
+## BOX
+mailboxes "/mnt/mail/Maildir/Da.Box"
+
+## Converis
+mailboxes "/mnt/mail/Maildir/Da.Converis"
+
+## Delad-disk
+mailboxes "/mnt/mail/Maildir/Da.Glusterfs"
+
+## Graphing
+mailboxes "/mnt/mail/Maildir/Da.Graphing"
+mailboxes "/mnt/mail/Maildir/Da.Graphing.chefs-tv"
+mailboxes "/mnt/mail/Maildir/Da.Graphing.Grafana"
+
+## Raindance
+mailboxes "/mnt/mail/Maildir/Da.Primula"
+mailboxes "/mnt/mail/Maildir/Da.Raindance"
+mailboxes "/mnt/mail/Maildir/Da.Raindance.AutoOp"
+mailboxes "/mnt/mail/Maildir/Da.Raindance.Diska Warning"
+mailboxes "/mnt/mail/Maildir/Da.Raindance.Filearea"
+mailboxes "/mnt/mail/Maildir/Da.Raindance.Mamut"
+mailboxes "/mnt/mail/Maildir/Da.Raindance.Nagios Alert"
+mailboxes "/mnt/mail/Maildir/Da.Raindance.UdpAdm"
+mailboxes "/mnt/mail/Maildir/Da.Raindance.TransDB"
+
+## F5
+mailboxes "/mnt/mail/Maildir/Da.F5 - BIGIP"
+mailboxes "/mnt/mail/Maildir/Da.F5 - BIGIP.Charlie - Kluster"
+mailboxes "/mnt/mail/Maildir/Da.F5 - BIGIP.Lab"
+
+
+## Network
+mailboxes "/mnt/mail/Maildir/Da.Network"
+mailboxes "/mnt/mail/Maildir/Da.Network.Intar"
+mailboxes "/mnt/mail/Maildir/Da.Network.switches router config diffs"
+mailboxes "/mnt/mail/Maildir/Da.Network.dnsadmin\@it\.su\.se"
