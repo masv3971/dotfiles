@@ -23,12 +23,21 @@ mailboxes "/mnt/mail/Maildir/Projekt.Ipv6"
 ## Ubuntu
 mailboxes "/mnt/mail/Maildir/Projekt.Ubuntu"
 
+## SNMP
+mailboxes "/mnt/mail/Maildir/Projekt.SNMP"
+
+## TOR
+mailboxes "/mnt/mail/Maildir/Projekt.TOR exit node"
+mailboxes "/mnt/mail/Maildir/Projekt.TOR exit node.SU"
+
+
 # Da
 ## BOX
 mailboxes "/mnt/mail/Maildir/Da.Box"
 
 ## Converis
-mailboxes "/mnt/mail/Maildir/Da.Converis"
+mailboxes "/mnt/mail/Maildir/Da.Forskningsst&APY-d"
+mailboxes "/mnt/mail/Maildir/Da.Forskningsst&APY-d.Converis"
 
 ## Delad-disk
 mailboxes "/mnt/mail/Maildir/Da.Glusterfs"
@@ -54,9 +63,22 @@ mailboxes "/mnt/mail/Maildir/Da.F5 - BIGIP"
 mailboxes "/mnt/mail/Maildir/Da.F5 - BIGIP.Charlie - Kluster"
 mailboxes "/mnt/mail/Maildir/Da.F5 - BIGIP.Lab"
 
-
 ## Network
 mailboxes "/mnt/mail/Maildir/Da.Network"
 mailboxes "/mnt/mail/Maildir/Da.Network.Intar"
 mailboxes "/mnt/mail/Maildir/Da.Network.switches router config diffs"
 mailboxes "/mnt/mail/Maildir/Da.Network.dnsadmin\@it\.su\.se"
+
+##NTP
+mailboxes "/mnt/mail/Maildir/Da.NTP"
+
+##TFTP
+mailboxes "/mnt/mail/Maildir/Da.TFTP"
+
+##Idm
+mailboxes "/mnt/mail/Maildir/Da.Idm"
+
+##Saltstack
+mailboxes "/mnt/mail/Maildir/Da.Saltstack"
+
+
