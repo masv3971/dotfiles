@@ -1,0 +1,7 @@
+#!/bin/bash
+
+kerberosFile=$(ls -t /tmp/krb5cc* |grep -v masv | head -1)
+if ! [ "x${kerberosFile}" == "x" ] && [ -f ${kerberosFile} ];then
+	mv -v ${kerberosFile} /tmp/krb5cc_masv
+fi
+
