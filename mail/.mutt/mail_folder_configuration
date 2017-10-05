@@ -32,12 +32,13 @@ mailboxes "/mnt/mail/Maildir/Projekt.TOR exit node.SU"
 
 
 # Da
+mailboxes "/mnt/mail/Maildir/Da"
 ## BOX
 mailboxes "/mnt/mail/Maildir/Da.Box"
 
 ## Converis
-mailboxes "/mnt/mail/Maildir/Da.Forskningsst&APY-d"
-mailboxes "/mnt/mail/Maildir/Da.Forskningsst&APY-d.Converis"
+mailboxes "/mnt/mail/Maildir/Da.Forskningsstod"
+mailboxes "/mnt/mail/Maildir/Da.Forskningsstod.Converis"
 
 ## Delad-disk
 mailboxes "/mnt/mail/Maildir/Da.Glusterfs"
