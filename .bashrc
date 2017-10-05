@@ -104,6 +104,7 @@ alias g='cd /home/masv3971/repon/git'
 alias s='cd /home/masv3971/repon/svn'
 alias creatre_file='/home/masv3971/repon/git/toolbucket/create_script/create_script_file.sh'
 alias sb='source /home/masv3971/.bashrc'
+alias root='ssh root@masv3971.it.su.se'
 
 #export LANGUAGE=en_GB.UTF-8
 #LANG=en_GB.UTF-8
