@@ -96,9 +96,14 @@ alias v='view'
 alias c='/usr/lib/rancid/bin/clogin'
 
 export SVN_EDITOR=vim
+export EDITOR=vim
 
 export KRB5CCNAME=/tmp/krb5cc_masv
 
+alias g='cd /home/masv3971/repon/git'
+alias s='cd /home/masv3971/repon/svn'
+alias creatre_file='/home/masv3971/repon/git/toolbucket/create_script/create_script_file.sh'
+alias sb='source /home/masv3971/.bashrc'
 
 #export LANGUAGE=en_GB.UTF-8
 #LANG=en_GB.UTF-8
