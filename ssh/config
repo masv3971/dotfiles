@@ -1,0 +1,41 @@
+Host cbeam.it.su.se
+        ForwardAgent                    yes
+        ForwardX11Trusted               yes
+        GSSAPIDelegateCredentials       yes
+
+Host svn.it.su.se
+        GSSAPIDelegateCredentials       yes
+
+Host svn-test.it.su.se
+        GSSAPIDelegateCredentials       yes
+
+Host git.it.su.se
+        GSSAPIDelegateCredentials       yes
+
+Host git-test.it.su.se
+        GSSAPIDelegateCredentials       yes
+
+Host sysconfig.it.su.se
+        GSSAPIDelegateCredentials       yes
+
+Host sdns.su.se
+        GSSAPIDelegateCredentials       yes
+
+Host hrplus-*-spm.it.su.se
+  PasswordAuthentication yes
+
+Host *.local.su.se
+  PasswordAuthentication yes
+
+Host *
+        ExitOnForwardFailure            yes
+        ForwardAgent                    no
+        ForwardX11                      no
+        ForwardX11Trusted               no
+        GSSAPIAuthentication            yes
+        GSSAPIKeyExchange               yes
+        GSSAPIDelegateCredentials       no
+        KbdInteractiveAuthentication    no
+        PasswordAuthentication          yes
+        ServerAliveInterval             5
+        ServerAliveCountMax             2
