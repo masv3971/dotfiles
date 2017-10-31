@@ -105,6 +105,8 @@ alias s='cd /home/masv3971/repon/svn'
 alias creatre_file='/home/masv3971/repon/git/toolbucket/create_script/create_script_file.sh'
 alias sb='source /home/masv3971/.bashrc'
 alias root='ssh root@masv3971.it.su.se'
+alias basic_deb_package='~/repon/git/toolbucket/basic_debian_package.sh'
+alias gen_password='~/repon/git/toolbucket/gen_password.sh'
 
 #export LANGUAGE=en_GB.UTF-8
 #LANG=en_GB.UTF-8
@@ -133,3 +135,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
+GPG_TTY=$(tty)
+export GPG_TTY
