@@ -100,11 +100,10 @@ export EDITOR=vim
 
 export KRB5CCNAME=/tmp/krb5cc_masv
 
-alias g='cd /home/masv3971/repon/git'
-alias s='cd /home/masv3971/repon/svn'
-alias creatre_file='/home/masv3971/repon/git/toolbucket/create_script/create_script_file.sh'
-alias sb='source /home/masv3971/.bashrc'
-alias root='ssh root@masv3971.it.su.se'
+alias g='cd /home/${USER}/repon/git'
+alias s='cd /home/${USER}/repon/svn'
+alias creatre_file='/home/${USER}/repon/git/toolbucket/create_script/create_script_file.sh'
+alias sb='source /home/${USER}/.bashrc'
 alias basic_deb_package='~/repon/git/toolbucket/basic_debian_package.sh'
 alias gen_password='~/repon/git/toolbucket/gen_password/gen_password.sh'
 
