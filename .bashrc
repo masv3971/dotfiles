@@ -91,7 +91,6 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
-alias v='view'
 
 alias c='/usr/lib/rancid/bin/clogin'
 
@@ -102,15 +101,18 @@ export KRB5CCNAME=/tmp/krb5cc_masv
 
 alias g='cd /home/${USER}/repon/git'
 alias s='cd /home/${USER}/repon/svn'
+alias v='cd /home/${USER}/virtualenvs'
 alias creatre_file='/home/${USER}/repon/git/toolbucket/create_script/create_script_file.sh'
 alias sb='source /home/${USER}/.bashrc'
 alias basic_deb_package='~/repon/git/toolbucket/basic_debian_package.sh'
 alias gen_password='~/repon/git/toolbucket/gen_password/gen_password.sh'
+alias sslyze='/home/${USER}/.local/bin/sslyze'
 
 #export LANGUAGE=en_GB.UTF-8
 #LANG=en_GB.UTF-8
 #export LANG=en_GB.UTF-8
 #export LC_CTYPE=en_US:en
+#export LC_ALL=en_GB.UTF-8
 
 
 
@@ -133,6 +135,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+export PATH="$PATH:/usr/local/go/bin:~/go/bin"
 
 GPG_TTY=$(tty)
 export GPG_TTY
+
+export GOROOT="/usr/local/go"
